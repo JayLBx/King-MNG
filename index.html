@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicativo de Gestión de Problemas en Servicios Tecnológicos</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>King MNG</h1>
+        <nav>
+            <ul>
+                <li>Inicio</li>
+                <li>Registro de Problemas</li>
+                <li>Lista de Problemas</li>
+                <li>Gestión de Usuarios</li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio">
+        <h2>Bienvenido a Qlty</h2>
+        <p>Un sistema eficiente para gestionar problemas en King MNG.</p>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Nombre de usuario">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button type="button" onclick="login()">Iniciar Sesión</button>
+            <p>¿Nuevo usuario? <a href="#"onclick="mostrarRegistro()">Regístrate aquí</a></p>
+        </section>
+    </section>
+    <section id="registro" style="display: none;">
+        <h2>Registro de Usuario</h2>
+        <form id="registroForm">
+            <input type="text" id="newUsername" placeholder="Nombre de usuario">
+            <input type="password" id="newPassword" placeholder="Contraseña">
+            <input type="email" id="email" placeholder="Correo electrónico">
+            <button type="button" onclick="registrar()">Registrarse</button>
+        </form>
+    
+    </section>
+    <section id="registro">
+        <h2>Registro de Problemas</h2>
+        <p> - Tiempos de espera elevados</p>
+        <p> - Falla del servidor web durante horas pico</p>
+    </section>
+
+    <section id="lista">
+        <h2>Lista de Problemas</h2>
+        <p> - Error de inicio de sesión para usuarios nuevos</p>
+        <p> - Retraso en la entrega de correos electrónicos de confirmación</p>
+        <p> - Función de restablecimiento de contraseña no funciona</p>
+        <p> - Pérdida de datos al realizar la actualización de software</p>
+    </section>
+
+    <section id="usuarios">
+        <h2>Gestión de Usuarios</h2>
+        <p> - Restablecimiento de contraseñas</p>
+        <p> - Asignación de roles y permisos</p>
+        <p> - Historial de actividad de usuarios</p>
+    </section>
+
+    <footer>
+        <p>© 2023 King MNG</p>
+    </footer>
+
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            if (username === 'usuario' && password === 'contraseña') {
+                alert('Inicio de sesión exitoso. ¡Bienvenido!');
+            } else {
+                alert('Nombre de usuario o contraseña incorrectos. Por favor, inténtelo de nuevo.');
+            }
+        }
+
+        function mostrarRegistro() {
+            document.getElementById('registro').style.display = 'block';
+            document.getElementById('inicio').style.display = 'none';
+        }
+
+        function registrar() {
+            var newUsername = document.getElementById('newUsername').value;
+            var newPassword = document.getElementById('newPassword').value;
+            var email = document.getElementById('email').value;
+            alert('Registro exitoso para ' + newUsername + ' con correo electrónico ' + email);
+        }
+    </script>
+</body>
+</html>
